@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event — Notice Board</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark">Notice Board</span>
+      <span class="brand-sub">LNCT Bhopal</span>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Events</a>
+      <a href="admin.html">Organizer Login</a>
+    </nav>
+  </div>
+</header>
+
+<section class="detail-hero" id="detailHero">
+  <div class="wrap">
+    <span class="ticket-cat" id="dCategory">—</span>
+    <h1 id="dTitle">Loading…</h1>
+    <div class="detail-meta-row">
+      <span id="dDate">—</span>
+      <span id="dTime">—</span>
+      <span id="dVenue">—</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="detail-grid" id="detailGrid" style="display:none;">
+    <div class="detail-desc">
+      <h2 style="font-family:var(--font-display); font-size:1.2rem;">About this event</h2>
+      <p id="dDescription"></p>
+      <p class="ticket-meta" id="dSeats"></p>
+    </div>
+
+    <div class="form-card">
+      <h3>Reserve your seat</h3>
+      <form id="regForm">
+        <div class="field">
+          <label for="fName">Full name</label>
+          <input type="text" id="fName" required>
+        </div>
+        <div class="field">
+          <label for="fEmail">College email</label>
+          <input type="email" id="fEmail" required>
+        </div>
+        <div class="field">
+          <label for="fPhone">Phone number</label>
+          <input type="tel" id="fPhone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+        </div>
+        <div class="field">
+          <label for="fBranch">Branch &amp; year</label>
+          <input type="text" id="fBranch" placeholder="e.g. CSE (CyberSecurity), 3rd Year" required>
+        </div>
+        <button type="submit" class="btn btn-block" id="submitBtn">Register</button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+  </div>
+
+  <p class="empty-state" id="notFound" style="display:none;">
+    This event doesn't exist or may have been removed. <a href="index.html" style="text-decoration:underline;">Back to all events</a>.
+  </p>
+</main>
+
+<footer class="site-footer">
+  Built by the Training &amp; Placement student coordination team · LNCT Bhopal
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/event.js"></script>
+</body>
+</html>

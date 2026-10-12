@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organizer Panel — Notice Board</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark">Notice Board</span>
+      <span class="brand-sub">Organizer Panel</span>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Events</a>
+      <a href="#" id="logoutLink" style="display:none;">Log out</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="admin-login" id="loginBox">
+    <h2>Organizer login</h2>
+    <p class="ticket-meta" style="margin-top:-8px;">Demo mode: any email/password works while Firebase is disabled.</p>
+    <div class="field">
+      <label for="aEmail">Email</label>
+      <input type="email" id="aEmail" value="coordinator@lnct.edu">
+    </div>
+    <div class="field">
+      <label for="aPass">Password</label>
+      <input type="password" id="aPass" value="demo1234">
+    </div>
+    <button class="btn btn-block" id="loginBtn">Log in</button>
+    <div class="form-msg" id="loginMsg"></div>
+  </div>
+
+  <div class="admin-panel" id="panel" style="display:none;">
+
+    <div class="section-title"><h2>Create event</h2></div>
+    <div class="form-card" style="margin-bottom:40px;">
+      <form id="createForm">
+        <div class="field"><label for="cTitle">Event title</label><input type="text" id="cTitle" required></div>
+        <div class="field"><label for="cCategory">Category</label>
+          <select id="cCategory">
+            <option>TEDx</option>
+            <option>Placement Drive</option>
+            <option>Cultural Fest</option>
+            <option>Technical Fest</option>
+            <option>Workshop</option>
+          </select>
+        </div>
+        <div class="field"><label for="cDate">Date</label><input type="date" id="cDate" required></div>
+        <div class="field"><label for="cTime">Time</label><input type="text" id="cTime" placeholder="e.g. 10:00 AM" required></div>
+        <div class="field"><label for="cVenue">Venue</label><input type="text" id="cVenue" required></div>
+        <div class="field"><label for="cCapacity">Capacity (seats)</label><input type="number" id="cCapacity" min="1" required></div>
+        <div class="field"><label for="cDescription">Description</label><input type="text" id="cDescription" required></div>
+        <button type="submit" class="btn btn-block">Publish event</button>
+        <div class="form-msg" id="createMsg"></div>
+      </form>
+    </div>
+
+    <div class="section-title"><h2>Manage &amp; view registrants</h2></div>
+    <div id="manageList"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  Built by the Training &amp; Placement student coordination team · LNCT Bhopal
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

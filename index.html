@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice Board — LNCT Campus Events</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark">Notice Board</span>
+      <span class="brand-sub">LNCT Bhopal</span>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Events</a>
+      <a href="admin.html">Organizer Login</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">// what's on campus</p>
+    <h1>One board. Every event, drive, and fest worth showing up for.</h1>
+    <p>Register in under a minute — no printouts, no spreadsheets, no chasing coordinators for a confirmation.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-chip active" data-filter="All">All</button>
+  </div>
+
+  <div class="section-title">
+    <h2>Upcoming</h2>
+    <span class="count" id="eventCount">— events</span>
+  </div>
+
+  <div class="event-grid" id="eventGrid">
+    <p class="empty-state">Loading events…</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Built by the Training &amp; Placement student coordination team · LNCT Bhopal
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
